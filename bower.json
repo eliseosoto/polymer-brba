@@ -1,0 +1,15 @@
+{
+  "name": "polymer-brba",
+  "version": "0.8.0",
+  "main": "index.html",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.0.20130808"
+  }
+}
