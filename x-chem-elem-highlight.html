@@ -1,4 +1,4 @@
-<polymer-element name="x-chem-elem-highlight">
+<polymer-element name="x-chem-elem-highlight" attributes="text">
   <template>
     <style>
         #ph {
@@ -18,13 +18,15 @@
     'use strict';
 
     Polymer('x-chem-elem-highlight', {
-      ready: function() {
-        console.log('I\'m ready!');
+      text: '',
+
+      textChanged: function() {
+        console.log('textChanged: ' + this.text);
         this.processText();
       },
 
       processText: function() {
-        var newInnerHTML = this.innerHTML.replace(/\[/g, '<span class="chemElem">');
+        var newInnerHTML = this.text.replace(/\[/g, '<span class="chemElem">');
         newInnerHTML = newInnerHTML.replace(/\]/g, '</span>');
         this.$.ph.innerHTML = newInnerHTML;
       }
