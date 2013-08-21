@@ -4,13 +4,26 @@
   <template>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <div class="container">
-      <input type="text" placeholder="Enter text" value="{{text}}">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="input-group">
+            <input class="form-control" type="text" placeholder="Enter text" value="{{text}}" autofocus>
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-remove"></span></button>
+            </span>
+          </div>
+        </div>
+      </div>
 
-      <ul>
-        <template repeat="{{brbaName in brbaNames}}">
-          <li><x-chem-elem-highlight text={{brbaName}}></x-chem-elem-highlight></li>
-        </template>
-      </ul>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="list-unstyled">
+            <template repeat="{{brbaName in brbaNames}}">
+              <li class="highlight"><x-chem-elem-highlight text={{brbaName}}></x-chem-elem-highlight></li>
+            </template>
+          </ul>
+        </div>
+      </div>
     </div>
   </template>
   <script>
